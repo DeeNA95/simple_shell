@@ -17,6 +17,7 @@
 #define TOK_DELIM " \t\r\n\a"
 
 /* Points to an array of pointers to strings called the "environment" */
+
 extern char **environ;
 
 
@@ -30,6 +31,7 @@ extern char **environ;
  * @_environ: environment variable
  * @pid: process ID of the shell
  */
+
 typedef struct data
 {
 	char **av;
@@ -47,6 +49,7 @@ typedef struct data
  * @next: next node
  * Description: single linked list to store separators
  */
+
 typedef struct sep_list_s
 {
 	char separator;
@@ -59,6 +62,7 @@ typedef struct sep_list_s
  * @next: next node
  * Description: single linked list to store command lines
  */
+
 typedef struct line_list_s
 {
 	char *line;
@@ -73,6 +77,7 @@ typedef struct line_list_s
  * @next: next node
  * Description: single linked list to store variables
  */
+
 typedef struct r_var_list
 {
 	int len_var;
@@ -86,6 +91,7 @@ typedef struct r_var_list
  * @name: The name of the command builtin i.e cd, exit, env
  * @f: data type pointer function.
  */
+
 typedef struct builtin_s
 {
 		char *name;
@@ -93,6 +99,7 @@ typedef struct builtin_s
 } builtin_t;
 
 /* aux_lists.c */
+
 sep_list *add_sep_node_end(sep_list **head, char sep);
 void free_sep_list(sep_list **head);
 line_list *add_line_node_end(line_list **head, char *line);
